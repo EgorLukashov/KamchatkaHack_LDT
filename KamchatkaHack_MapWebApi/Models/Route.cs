@@ -1,14 +1,16 @@
-﻿namespace KamchatkaHack_MapWebApi.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace KamchatkaHack_MapWebApi.Models
 {
     public class Route
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public Park ParkId { get; set; }
+        public int IDRoute { get; set; }
+        public string RouteName { get; set; }
+        public Park Park { get; set; }
+        public int ParkID { get; set; }
         public int ActualCapacityObj { get; set; }
         public string? GpxFile { get; set; }
         public int MaxCapacityObj { get; set; }
-        public string? TouristList { get; set; }
-        //public ICollection<Park> ParkId { get; set; }
+        public string? touristList { get; set; }
     }
 }

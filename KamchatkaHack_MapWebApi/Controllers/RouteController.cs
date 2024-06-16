@@ -1,80 +1,76 @@
-﻿//using KamchatkaHack_MapWebApi.Data;
-//using KamchatkaHack_MapWebApi.Models;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.EntityFrameworkCore;
-//using Microsoft.IdentityModel.Tokens;
-//using System.IdentityModel.Tokens.Jwt;
-//using System.Security.Claims;
-////
-//using System.Security.Cryptography;
-//using System.Text;
+﻿using KamchatkaHack_MapWebApi.Data;
+using KamchatkaHack_MapWebApi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+//
+using System.Security.Cryptography;
+using System.Text;
 
-//namespace KamchatkaHack_MapWebApi.Controllers
-//{
-//    [ApiController]
-//    [Route("[controller]")]
-//    public class RouteController : Controller
-//    {
-        
-//        private readonly ApplicationDbContext _db;
-//        public RouteController(ApplicationDbContext db)
-//        {
-//            _db = db;
-//        }
+namespace KamchatkaHack_MapWebApi.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class RouteController : Controller
+    {
 
-//        [HttpGet("api/admins")]
-//        public IActionResult Get()
-//        {
-//            IEnumerable<Admin> admins = _db.admins.ToList();
+        private readonly ApplicationDbContext _db;
+        public RouteController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
 
-//            return Ok(admins);
-//        }
+        [HttpGet("api/route/{id}")]
+        public IActionResult GetById(int id)
+        {
+            var route = _db.route.Find(id);
 
-//        //[HttpPost("login")]
-//        //public IActionResult Login([FromBody] LoginRequest loginRequest)
-//        //{
-//        //    if (loginRequest == null || string.IsNullOrEmpty(loginRequest.UserName) || string.IsNullOrEmpty(loginRequest.Password))
-//        //    {
-//        //        return BadRequest("Invalid client request");
-//        //    }
+            if (route == null)
+            {
+                return NotFound($"Route with ID {id} not found.");
+            }
 
-//        //    // Хэшируем введенный пароль для сравнения с хранимым хэшированным паролем
-//        //    //var hashedPassword = ComputeSha256Hash(loginRequest.Password);
+            return Ok(route);
+        }
 
-//        //    // Ищем администратора с заданными учетными данными
-//        //    var admin = _db.admins
-//        //        .Where(a => a.Name == loginRequest.UserName && a.Password == loginRequest.Password)
-//        //        .FirstOrDefault();
+        [HttpGet("api/routes")]
+        public IActionResult GetAllRoutes()
+        {
+            var routes = _db.route.ToList();
+            if (routes == null)
+            {
+                return NotFound($"No route was found.");
+            }
 
-//        //    if (admin != null)
-//        //    {
-//        //        // Создаем и возвращаем токен
-//        //        var token = "exampleToken"; // Здесь должна быть логика генерации токена
-//        //        return Ok(new LoginResponse
-//        //        {
-//        //            Admin = admin,
-//        //            Token = token
-//        //        });
-//        //    }
+            return Ok(routes);
+        }
 
-//        //    return Unauthorized(new
-//        //    {
-//        //        //Success = false,
-//        //        ErrorMessage = "Invalid username or password"
-//        //    });
-//        //}
+        [HttpGet("api/routes/park{parkId}")]
+        public IActionResult GetByParkId(int parkId)
+        {
+            var routes = _db.route.Where(r => r.ParkID == parkId).ToList();
+
+            if (!routes.Any())
+            {
+                return NotFound($"No routes found for ParkID {parkId}.");
+            }
+
+            return Ok(routes);
+        }
+
+        [HttpPost]
+        public IActionResult Add(Models.Route newRoute)
+        {
+            _db.route.Add(newRoute);
+            _db.SaveChanges();
+
+            return CreatedAtAction(nameof(GetById), new { id = newRoute.IDRoute }, newRoute);
+        }
 
 
-        
-//        //[HttpPatch("api/admin/{id}/{name}")]
-//        //public async Task<IActionResult> Update(int id, string name)
-//        //{
-//        //    // Assuming you have a model named Flowers with properties Name, Price, and Profit
-//        //    Admin admins = _db.admins.Find(id);
-//        //    admins.Name = name;
-//        //    _db.SaveChanges();
 
-//        //    return Ok(admins);
-//        //}
-//    }
-//}
+    }
+}
