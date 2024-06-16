@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MVC_AdminPanel.Models.Admin>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a href="@Url.Action("Create")">Create New</a>
+</p>
+
+@if (Model == null || !Model.Any())
+{
+    <div>No data available</div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().AdminLogin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().AdminName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().AdminSurname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().AdminEmail)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdminLogin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdminName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdminSurname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdminEmail)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.IDAdmin })">Edit</a> |
+                        <a href="@Url.Action("Details", new { id = item.IDAdmin })">Details</a> |
+                        <a href="@Url.Action("Delete", new { id = item.IDAdmin })">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -11,6 +11,7 @@ namespace KamchatkaHack_MapWebApi.Data
         }
         public DbSet<Park> park { get; set; }
         public DbSet<Models.Route> route { get; set; }
+        public DbSet<Admin> Admin { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Указываем, что свойство IDPark является первичным ключом

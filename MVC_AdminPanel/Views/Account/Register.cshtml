@@ -1,0 +1,31 @@
+﻿@model MVC_AdminPanel.Models.Admin
+
+<h1>Регистрация</h1>
+
+<form asp-action="Register">
+    <div class="form-group">
+        <label asp-for="AdminLogin">Логин</label>
+        <input asp-for="AdminLogin" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AdminHashedPassword">Пароль</label>
+        <input asp-for="AdminHashedPassword" type="password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AdminName">Имя</label>
+        <input asp-for="AdminName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AdminSurname">Фамилия</label>
+        <input asp-for="AdminSurname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AdminEmail">Email</label>
+        <input asp-for="AdminEmail" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+</form>
+
+<p>
+    <a asp-action="Login">Войти</a>
+</p>

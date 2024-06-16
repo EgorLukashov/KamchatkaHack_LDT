@@ -1,0 +1,59 @@
+﻿@model MVC_AdminPanel.Models.Admin
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Admin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="AdminLogin" class="control-label"></label>
+                <input asp-for="AdminLogin" class="form-control" />
+                <span asp-validation-for="AdminLogin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminName" class="control-label"></label>
+                <input asp-for="AdminName" class="form-control" />
+                <span asp-validation-for="AdminName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminSurname" class="control-label"></label>
+                <input asp-for="AdminSurname" class="form-control" />
+                <span asp-validation-for="AdminSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminMiddleName" class="control-label"></label>
+                <input asp-for="AdminMiddleName" class="form-control" />
+                <span asp-validation-for="AdminMiddleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminHashedPassword" class="control-label"></label>
+                <input asp-for="AdminHashedPassword" class="form-control" />
+                <span asp-validation-for="AdminHashedPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminEmail" class="control-label"></label>
+                <input asp-for="AdminEmail" class="form-control" />
+                <span asp-validation-for="AdminEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
