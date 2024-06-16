@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\KamchatkaHack_MapWebApi.props" />
+</Project>
