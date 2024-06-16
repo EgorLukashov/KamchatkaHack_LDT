@@ -1900,11 +1900,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\KamchatkaHack_MapWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\KamchatkaHack_MapWebApi.csproj",
       "projectName": "KamchatkaHack_MapWebApi",
-      "projectPath": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\KamchatkaHack_MapWebApi.csproj",
+      "projectPath": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\KamchatkaHack_MapWebApi.csproj",
       "packagesPath": "C:\\Users\\legor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\obj\\",
+      "outputPath": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

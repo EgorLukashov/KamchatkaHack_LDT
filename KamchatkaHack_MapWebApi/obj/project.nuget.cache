@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aqNUWiqgd2B5xdwNH5DBgVqr6A1/ivHRLqvEranaKpJ+p0RwbEKKDCoUCGLanDHejzBHvpeaJNGVYB+D+OhT4A==",
+  "dgSpecHash": "5ZTz4bWEJiurw4SoXkycmILPQ+wAkmB1uA+OAvoYKuGBRV/7XzHZBiPfHfaBT/ShDzUKgmbbcndVapsSX5RI3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\KamchatkaHack_MapWebApi.csproj",
+  "projectFilePath": "C:\\Users\\legor\\Desktop\\KamchatkaHack_LDT\\KamchatkaHack_MapWebApi\\KamchatkaHack_MapWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\legor\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.20\\microsoft.aspnetcore.authentication.jwtbearer.7.0.20.nupkg.sha512",
     "C:\\Users\\legor\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
